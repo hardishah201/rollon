@@ -1,0 +1,46 @@
+<div class="compadding ContactForm">
+    <div class="container">
+        <div class="comTitle text-center">Send an Enquiry</div>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>First Name:</label>
+                    <input type="text" required formControlName="firstName" />
+                    <div *ngIf="firstName?.errors?.['required'] && firstName?.touched" class="errormsg">
+                        First name is required
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label>Last Name:</label>
+                    <input type="text" required formControlName="lastName" />
+                    <div *ngIf="lastName?.errors?.['required'] && lastName?.touched" class="errormsg">
+                        Last name is required
+                    </div>
+                </div>
+            </div>
+
+            <label>Email:</label>
+            <input type="email" required formControlName="email" />
+            <div *ngIf="contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched"
+                class="errormsg">Email not valid</div>
+
+            <label>Message:</label>
+            <textarea required formControlName="message"></textarea>
+            <div *ngIf="message?.errors?.['minlength'] && message?.touched" class="errormsg">
+                Message must be at least 10 characters
+            </div>
+
+            <button class="comButton" type="submit">Submit</button>
+        </form>
+
+        <div *ngIf="submittedData.length > 0">
+            <h3>Submitted Entries:</h3>
+            <ul>
+                <li *ngFor="let entry of submittedData">
+                    {{ entry.firstName }} {{ entry.lastName }} - {{ entry.email }}<br />
+                    Message: {{ entry.message }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

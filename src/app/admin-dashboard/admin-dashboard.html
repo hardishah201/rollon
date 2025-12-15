@@ -1,0 +1,21 @@
+<table *ngIf="submittedData && submittedData.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of submittedData; let i = index; trackBy: trackByIndex">
+        <td>{{ data.firstname }} {{ data.lastname }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div *ngIf="!submittedData || submittedData.length === 0">
+    Sorry
+  </div>
+  

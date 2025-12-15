@@ -1,1 +1,208 @@
+/* @import '~bootstrap/dist/css/bootstrap.css'; */
+
 /* You can add global styles to this file, and also import other style files */
+body{font-family: 'Poppins', sans-serif;margin: 0}
+.flex{display: flex;}
+*{text-decoration: none !important;}
+ul{padding: 0;margin: 0}
+ul li{list-style-type: none;}
+img{width: 100%}
+.comButton{border-radius: 5px;background-color: #04375c;color: #fff;padding: 8px 28px 9px 30px;border: 1px solid #04375c;font-size: 16px;transition: 0.3s ease-in-out all;-webkit-transition: 0.3s ease-in-out all;ms-transition: 0.3s ease-in-out all;o-transition: 0.3s ease-in-out all;}
+.blueColor{color: #04375c;}
+.comTitle{font-size: 60px;font-weight: 600;color: #404244;}
+.comPadding{padding: 100px 0}
+.trans{transition: 0.3s ease-in-out all;-webkit-transition: 0.3s ease-in-out all;ms-transition: 0.3s ease-in-out all;o-transition: 0.3s ease-in-out all;}
+
+/*header css start*/
+.header{border-bottom: solid 1px rgb(151 151 151 / 50%);position: sticky;top: 0;z-index: 99;background: #fff;}
+.header .navbar{padding: 16px 0;}
+.header .navbar-brand{padding: 0}
+.header .navbar-brand img{max-width: 180px}
+.header .container-fluid.flex{align-items: center;}
+.header .navbar-nav{flex-direction: row;}
+.header .navbar-nav li a{padding: 0 16px;color: #000;font-weight: 500;font-size: 18px;}
+.header .navbar-nav li a.active{color: #04375c;overflow-x: hidden;}
+.header .rightside li{display: inline-block;}
+.header .rightside li a{font-size: 16px;font-weight: 500}
+.header .centermenu{justify-content: center;}
+.header .hamburger{display: none;}
+.header .hamburger span{position: relative;display: block;width: 34px;height: 2px;background: #04375c;}
+.header .hamburger span:before, .header .hamburger span:after{position: absolute;content: '';background: #04375c;width: 100%;height: 2px;left: 0;top: -17px;}
+.header .hamburger span:after{top: initial;bottom: 9px}
+/*header css end*/
+
+/*banner css start*/
+.bannerSec{text-align: center;padding-bottom: 60px}
+.bannerSec .bannerTitle{font-size: 60px;font-weight: 600;text-align: center;color: #404244;line-height: 1.08;}
+.bannerSec .bannerDescription{font-size: 24px;font-weight: 400;line-height: 1.25;color: #939eaa;text-align: center;margin-top: 14px;margin-block: 40px}
+.bannerSec .bannerImg img{width: auto;max-height: 500px;max-width: 100%;}
+.bannerSec .bannerinfomain{padding: 10px 0 10px;font-size: 34px;line-height: 1.12;color: #404244;font-weight: 600;}
+.bannerSec .bannerinfosecondary{font-size: 24px;margin-bottom: 20px}
+.bannerSec .comButton{max-width: 160px;margin: auto;}
+/*banner css end*/
+
+/*howitworks css start*/
+.howitworks{background: url('/images/howItWorksBg.webp') repeat center;background-size: 100%;}
+.howitworks .howtitle{margin-bottom: 8px;}
+.howitworks .howdescription{font-size: 24px;font-weight: 400;padding-bottom: 20px;color: #939eaa;}
+.howitworks .howcol{width: 100%}
+.howitworks .howiMg{max-width: 400px;margin: 0 auto 20px;display: flex;}
+.howitworks .howsteps{display: flex;align-items: flex-start;}
+.howitworks .howsteps li{margin-bottom: 50px;position: relative;padding-right: 25px;width: 33%;font-size: 20px;font-weight: 500;color: #404244;line-height: 1.2;}
+.howitworks .howsteps li:not(:last-child):before{position: absolute;content: '';border-top: 1px solid rgb(151 151 151 / 50%);width: 100%;z-index: -1;top: 16px;left: 5px;}
+.howitworks .howsteps li span{width: 32px;height: 32px;display:block;margin-bottom: 12px;position: relative;border-radius: 50%;background-color: #04375c;color: #fff;display: flex;align-items: center;justify-content: center;}
+.howitworks .howblue{font-size: 20px;font-weight: 500;line-height: 1.33;color: #04375c;}
+/*howitworks css end*/
+
+/*our feature sec css start*/
+.smallTitle{color: #939eaa;font-size: 24px;line-height: 1.33;font-weight: 500;margin-top: 8px;}
+.ourFeature .featureBox{display: flex;justify-content: space-between;flex-wrap: wrap;}
+.ourFeature .featureBox .greyBox{border-radius: 10px;background: rgb(147 158 170 / 10%);padding: 50px 15px;margin-top: 24px;text-align: center;width: 32%;}
+.ourFeature .greyBox .title{padding: 25px 0 8px;font-size: 18px;line-height: 1.22;font-weight: 600}
+.ourFeature .greyBox .content{color: #404244;font-size: 18px;line-height: 1.22;font-weight: 500}
+.ourFeature .greyBox img{height: 51px}
+/*our feature sec css end*/
+
+/*signuptoday sec css start*/
+.signupToday{position: relative;}
+.signupToday:before{position: absolute;content: '';width: 100%;height: 100%;top: -90px;left: 0;background: url('/images/howItWorksBg.webp') no-repeat;background-size: 100%;z-index: -1;}
+.signupToday .signupTitle{font-size: 34px;font-weight: 600;color: #404244;margin-bottom: 17px;}
+.signupToday .signupInfo{color: #939eaa;font-size: 20px;font-weight: 400;line-height: 1.33;text-align: left; margin-bottom: 27px;}
+.signupToday .additionalInfo{color: #939eaa;font-size: 20px;font-weight: 400;line-height: 1.33;text-align: left;margin-top: 30px;}
+.signupToday ul li{list-style-type: disc;}
+.signupToday .comButton{max-width: 160px;}
+/*signuptoday sec css end*/
+
+/*foundation sec css start*/
+.foundationSec{padding-top: 0;}
+.foundationSec .foundationFlex{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 40px}
+.foundationSec .foundationFlex .haldFoundationpart{width: 47%;font-size: 20px;}
+.foundationSec .comTitle{line-height: 1.1;}
+.foundationSec .fInfo{display: flex;align-items: flex-start;padding: 10px 0;position: relative;width: 100%;z-index: 1;}
+.foundationSec .fInfo .name{font-size: 18px;font-weight: 600;line-height: 1.22;color: #404244;padding: 0 40px;background-color: #fff;}
+.foundationSec .fInfo:before{position: absolute;content: '';width: 100%;height: 1px;background-color: #04375c;top: 0;bottom: 0;margin: auto;z-index: -1;}
+.foundationSec .fInfo:not(:last-child):after{position: absolute;content: '';width: 1px;height: 100%;background-color: #04375c;right: 0;z-index: -1;top: 20px;}
+.foundationSec .rightInfo{position: relative;}
+.foundationSec .rightInfo:after{position: absolute;content: '';width: 50px;height: 1px;background-color: #04375c;top: 0;bottom: 0;margin: auto;left: 100%;}
+/*foundation sec css end*/
+
+/*securitySec css start*/
+.securitySec{padding: 50px 0}
+.securitySec .sTitle{font-size: 34px;font-weight: 600;color: #404244;}
+.securitySec .sDetail{padding: 16px 0;color: #939eaa;font-size: 24px;font-weight: 500;line-height: 1.33;}
+.securitySec .blueColor{font-size: 24px;font-weight: 500;line-height: 1.33;color: #04375c}
+/*securitySec css end*/
+
+/*createAccount sec css start*/
+.createAccount .gBox{background-image: linear-gradient(to right, #1eb7f5 -17%, #662d91 99%);border-radius: 10px;padding: 55px 85px;color: #fff;display: flex;align-items: center;justify-content: space-between;}
+.createAccount .gBox .title{font-size: 50px;font-weight: 500;padding-bottom: 3px;}
+.createAccount .gBox .detail{font-size: 24px;font-weight: 500;line-height: 1.33;}
+.createAccount .whiteButton{margin-left: 30px;color: #5f3c9c;background: #fff;font-weight: 600;white-space: nowrap;}
+/*createAccount sec css end*/
+
+/*footer css start*/
+.footer{padding: 56px 0;border-top: solid 1px #979797;}
+.footer .footerlogo{width: 144px;}
+.footer .fInfo{margin-top: 20px;font-size: 14px;font-weight: 500;line-height: 1.29;color: #939eaa}
+.footer .fTitle{font-size: 18px;font-weight: bold;line-height: 1.22;color: #404244;margin-top: 17px;}
+.footer .footerUl li a{font-size: 18px;font-weight: 500;line-height: 1.22;color: #939eaa;margin-top: 16px;display: block;}
+.footer .footerBigtitle{font-size: 36px;font-weight: bold;line-height: 1.11;color: #404244;margin-bottom: 30px;}
+/*footer css end*/
+
+.faqSec{padding-bottom: 30px;margin-bottom: 60px;border-radius: 10px;}
+.faqBox{padding: 10px;background-color: #04375c38;margin-bottom: 10px;border: 1px solid #04375c54;border-radius: 5px;}
+.titleFaq{font-size: 20px;cursor: pointer;font-weight: 600;color: #04375c;display: flex;justify-content: space-between;align-items: center;}
+.contentFaq{font-size: 16px;padding: 10px 0;color: #04375c;}
+.iconFaq{width: 20px;}
+
+
+
+/*hover effects*/
+@media only screen and (min-width: 1200px){
+	header ul li a:hover{color: #04375c;}
+	.comButton:hover{background: #fff;color: #04375c}
+	.ourFeature .greyBox:hover{background: rgb(29 137 226 / 9%)}
+}
+
+/*media query*/
+@media only screen and (max-width: 1366px){
+	.createAccount .gBox{padding: 45px 65px}
+	.createAccount .gBox .title{font-size: 40px;}
+}
+
+
+@media only screen and (max-width: 1199px){
+	.comPadding{padding: 60px 0;}
+	.comTitle{font-size: 50px;}
+	.bannerSec .bannerTitle{font-size: 50px;}
+	.bannerSec .bannerinfomain{font-size: 28px;}
+	.howitworks .howdescription{font-size: 20px;}
+	.howitworks .howsteps li{font-size: 14px;}
+	.createAccount .gBox{padding: 35px 50px}
+	.createAccount .gBox .title{font-size: 32px;}
+	.createAccount .gBox .detail{font-size: 20px}
+	.footer .footerUl li a{font-size: 16px;margin-top: 12px;}
+	.footer .footerBigtitle{font-size: 22px;}
+}
+
+@media only screen and (max-width: 991px){
+	.comTitle, .bannerSec .bannerTitle{font-size: 34px;}
+	.bannerSec .bannerDescription{font-size: 18px;}
+	.bannerSec .bannerDescription br{display: none;}
+	.bannerSec .bannerinfomain{font-size: 24px;}
+	.bannerSec .bannerinfosecondary{font-size: 20px}
+	.howitworks .howgrid{flex-direction: column-reverse;}
+	.howitworks .howcol{width: 100%;}
+	.howitworks .howgrid .howcol.withimg{text-align: center;margin-bottom: 10px}
+	.howitworks .howgrid .howcol.withimg img{max-width: 50%;}
+	.ourFeature .smallTitle{font-size: 18px;}
+	.ourFeature .featureBox .greyBox{width: 48%;padding: 40px 10px;margin-top: 28px;}
+	.ourFeature .greyBox .title{font-size: 16px;}
+	.ourFeature .greyBox .content{font-size: 16px;}
+	.signupToday .signupInfo{font-size: 18px;}
+	.foundationSec .foundationFlex .haldFoundationpart{width: 100%}
+	.foundationSec .foundationFlex .haldFoundationpart.imgDiv{text-align: center;margin-bottom: 20px}
+	.foundationSec .foundationFlex .haldFoundationpart.imgDiv img{max-width: 400px}
+	.foundationSec .fInfo:not(:last-child){margin-bottom: 30px;}
+	.foundationSec .foundationFlex{margin-top: 10px}
+	.foundationSec .fInfo br{display: none;}
+	.securitySec .sTitle{font-size: 24px;}
+	.securitySec .sDetail{font-size: 18px;padding: 10px 0}
+	.securitySec .blueColor{font-size: 18px;}
+	.createAccount .gBox{padding: 30px 40px}
+	.createAccount .gBox .title{font-size: 28px;}
+	.createAccount .gBox .detail{font-size: 18px;}
+	.footer .footerBigtitle{margin-top: 40px;font-size: 20px;}
+	.footer .footerBigtitle br{display: none;}
+	.centermenu{display: none;position: absolute;background: #fff;width: calc(100% + 15px);left: -7px;top: 100px;box-shadow: 0 10px 10px 0 rgb(29 137 226 / 10%);}
+	.header .navbar{padding: 10px 0;}
+	.header .navbar-nav li a{font-size: 16px;padding: 10px;display: block;text-align: center;}
+	.header .hamburger{display: block;position: absolute;right: 10px;top: 47px;}
+	.header .hamburger.open span{transform: rotate(47deg);top: -5px;}
+	.header .hamburger.open span:before{transform: rotate(-93deg);top: 0}
+	.header .hamburger.open span:after{display: none;}
+	.header .navbar-nav li a.comButton{max-width: 150px;color: #fff;margin: auto;}
+	.header .navbar-nav{flex-direction: column;}
+}
+
+@media only screen and (max-width: 767px){
+	.comPadding{padding: 50px 0;}
+	.comTitle, .bannerSec .bannerTitle{font-size: 26px;}
+	.comTitle br, .bannerSec .bannerTitle br{display: none;}
+	.ourFeature .featureBox .greyBox{width: 100%;margin-top: 16px;}
+	.bannerSec .bannerinfosecondary, .bannerSec .bannerinfomain{font-size: 20px;}
+	.bannerSec .bannerinfomain br{display: none;}
+	.howitworks .howdescription{font-size: 18PX;padding-bottom: 30px}
+	.howitworks .howblue{font-size: 18px;}
+	.signupToday .signupInfo{font-size: 16px;margin-bottom: 10px;}
+	.createAccount .gBox{padding: 30px;flex-direction: column;text-align: center;}
+	.createAccount .gBox .title{font-size: 24px;line-height: 26px;margin-bottom: 10px}
+	.createAccount .whiteButton{margin: 20px 0 0;}
+	.foundationSec .fInfo .detail{font-size: 16px;}
+	.foundationSec .fInfo img{width: 44px;margin-right: 22px;}
+	.footer .footerBigtitle{font-size: 18px;}
+}
+
+@media only screen and (min-width: 991){
+	.header .centermenu{display: block !important}
+}
