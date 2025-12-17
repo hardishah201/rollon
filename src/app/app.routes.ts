@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Login } from './login/login';
-import { PageNotFond } from './page-not-fond/page-not-fond';
+import { PageNotFond } from './page-not-found/page-not-found';
 import { AdminDashboard } from './admin-dashboard/admin-dashboard';
-import { ComingSoon } from './coming-soon/coming-soon';
 import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-  { path: 'admin-dashboard', component: AdminDashboard, canActivate: [AuthGuard] },
-  { path: '', component: ComingSoon },
+  // { path: '', component: ComingSoon },
+  { path: '', component: Home },
   { path: 'login', component: Login },
-  { path: 'home', component: Home },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'admin-dashboard', component: AdminDashboard, canActivate: [AuthGuard] },
   { path: '**', component: PageNotFond }
 ];
 

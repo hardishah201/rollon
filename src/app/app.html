@@ -1,12 +1,23 @@
 <!-- header start -->
-<header class="header wow fadeIn" data-wow-delay="0.2s">
+<header class="header">
     <div class="container">
         <nav class="navbar">
             <a class="navbar-brand" href="/">
                 <img src="images/logo.svg" alt="Roll on">
             </a>
-            <div class="rightside" *ngIf="authService.isAuthenticated()">
-                <button class="comButton" (click)="logout()">Logout</button>
+            <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle navigation">
+                <span></span>
+            </button>
+            <div class="centermenu" [class.open]="menuOpen">
+                <ul class="nav" *ngIf="!isLogged()">
+                    <li class="nav-item"><a class="nav-link" href="#storyProcess" (click)="scrollTo('storyProcess',$event); menuOpen=false">Our Story & Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" (click)="scrollTo('services',$event); menuOpen=false">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mission" (click)="scrollTo('mission',$event); menuOpen=false">Our Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contactus" (click)="scrollTo('contactus',$event); menuOpen=false">Contact Us</a></li>
+                </ul>
+                <ul class="nav rightside" *ngIf="isLogged()">
+                    <li class="nav-item"><a class="nav-link comButton" href="#" (click)="logout($event); menuOpen=false">Logout</a></li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -14,7 +25,7 @@
 <!-- header end -->
 <router-outlet></router-outlet>
 <!-- footer start -->
-<div class="container wow fadeInUp" data-wow-delay="0.5s">
+<div class="container">
     <footer class="footer">
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-sm-12">

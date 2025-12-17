@@ -1,7 +1,7 @@
-<div class="compadding ContactForm">
+<div class="compadding ContactForm" id="contactus">
     <div class="container">
         <div class="comTitle text-center">Send an Enquiry</div>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="contactForm">
             <div class="row">
                 <div class="col-sm-6">
                     <label>First Name:</label>
@@ -33,14 +33,5 @@
             <button class="comButton" type="submit">Submit</button>
         </form>
 
-        <div *ngIf="submittedData.length > 0">
-            <h3>Submitted Entries:</h3>
-            <ul>
-                <li *ngFor="let entry of submittedData">
-                    {{ entry.firstName }} {{ entry.lastName }} - {{ entry.email }}<br />
-                    Message: {{ entry.message }}
-                </li>
-            </ul>
-        </div>
     </div>
 </div>

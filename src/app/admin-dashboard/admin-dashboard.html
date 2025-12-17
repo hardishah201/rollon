@@ -7,15 +7,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of submittedData; let i = index; trackBy: trackByIndex">
-        <td>{{ data.firstname }} {{ data.lastname }}</td>
+      <!-- <tr *ngFor="let data of submittedData; let i = index;">
+        <td>{{ data.firstName }} {{ data.lastName }}</td>
         <td>{{ data.email }}</td>
         <td>{{ data.message }}</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
-  
-  <div *ngIf="!submittedData || submittedData.length === 0">
-    Sorry
-  </div>
   

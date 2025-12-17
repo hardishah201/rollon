@@ -5,24 +5,11 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin-dashboard',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-dashboard.html',
-  styleUrl: './admin-dashboard.css'
+  styleUrls: ['./admin-dashboard.css']
 })
-export class AdminDashboard implements OnInit {
-
-  submittedData : User[] = [];
-
-  constructor(private UserService : UserService){}
-
-  ngOnInit(): void {
-    this.getData();
-    console.log("hi", this.submittedData)
-  }
-  getData() {
-    this.UserService.getSubmissiondata().subscribe((data) => (this.submittedData = data));
-  }
-  trackByIndex(index: number, item: any): number {
-    return index;
-  }  
+export class AdminDashboard {
+ submittedData: User[] = [];
 }

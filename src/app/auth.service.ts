@@ -1,40 +1,22 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private loggedIn = false;
-  private isBrowser: boolean;
-
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {
-    // Check if running in browser
-    this.isBrowser = isPlatformBrowser(platformId);
-
-    // Restore state only if browser
-    if (this.isBrowser) {
-      this.loggedIn = localStorage.getItem('auth') === 'true';
-    }
-  }
+  private storageKey = 'rollon.auth';
 
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === 'secure123') {
-      this.loggedIn = true;
-      if (this.isBrowser) {
-        localStorage.setItem('auth', 'true');   // persist
-      }
+      try { localStorage.setItem(this.storageKey, '1'); } catch (e) {}
       return true;
     }
     return false;
   }
 
   logout(): void {
-    this.loggedIn = false;
-    if (this.isBrowser) {
-      localStorage.removeItem('auth');          // clear persistence
-    }
+    try { localStorage.removeItem(this.storageKey); } catch (e) {}
   }
 
   isAuthenticated(): boolean {
-    return this.loggedIn;
+    try { return localStorage.getItem(this.storageKey) === '1'; } catch (e) { return false; }
   }
 }

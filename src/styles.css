@@ -1,7 +1,7 @@
 /* @import '~bootstrap/dist/css/bootstrap.css'; */
 
 /* You can add global styles to this file, and also import other style files */
-body{font-family: 'Poppins', sans-serif;margin: 0}
+body{font-family: 'Poppins', sans-serif;margin: 0;font-size: 16px;}
 .flex{display: flex;}
 *{text-decoration: none !important;}
 ul{padding: 0;margin: 0}
@@ -9,19 +9,21 @@ ul li{list-style-type: none;}
 img{width: 100%}
 .comButton{border-radius: 5px;background-color: #04375c;color: #fff;padding: 8px 28px 9px 30px;border: 1px solid #04375c;font-size: 16px;transition: 0.3s ease-in-out all;-webkit-transition: 0.3s ease-in-out all;ms-transition: 0.3s ease-in-out all;o-transition: 0.3s ease-in-out all;}
 .blueColor{color: #04375c;}
-.comTitle{font-size: 60px;font-weight: 600;color: #404244;}
-.comPadding{padding: 100px 0}
+.comTitle{font-size: 50px;font-weight: 600;color: #404244;}
+.comPadding{padding: 60px 0}
 .trans{transition: 0.3s ease-in-out all;-webkit-transition: 0.3s ease-in-out all;ms-transition: 0.3s ease-in-out all;o-transition: 0.3s ease-in-out all;}
 
 /*header css start*/
 .header{border-bottom: solid 1px rgb(151 151 151 / 50%);position: sticky;top: 0;z-index: 99;background: #fff;}
 .header .navbar{padding: 16px 0;}
 .header .navbar-brand{padding: 0}
-.header .navbar-brand img{max-width: 180px}
+.header .navbar-brand img{max-width: 180px;transition: max-width .2s ease, height .2s ease}
+.header.scrolled .navbar-brand img{max-width: 100px}
 .header .container-fluid.flex{align-items: center;}
-.header .navbar-nav{flex-direction: row;}
-.header .navbar-nav li a{padding: 0 16px;color: #000;font-weight: 500;font-size: 18px;}
-.header .navbar-nav li a.active{color: #04375c;overflow-x: hidden;}
+.header .navbar{display: flex;gap: 1rem;align-items: center;padding-left: 0}
+.header .navbar li{list-style: none}
+.header .navbar li a{padding: 8px 12px;border-radius: 6px;display: inline-block;transition: background .15s ease, color .15s ease;color: #2c3e50;font-weight: 500;}
+.header .navbar li a:hover{background: rgba(4,55,92,0.06);color: #04375c;text-decoration: none}
 .header .rightside li{display: inline-block;}
 .header .rightside li a{font-size: 16px;font-weight: 500}
 .header .centermenu{justify-content: center;}
@@ -33,7 +35,7 @@ img{width: 100%}
 
 /*banner css start*/
 .bannerSec{text-align: center;padding-bottom: 60px}
-.bannerSec .bannerTitle{font-size: 60px;font-weight: 600;text-align: center;color: #404244;line-height: 1.08;}
+.bannerSec .bannerTitle{font-size: 50px;font-weight: 600;text-align: center;color: #404244;line-height: 1.08;}
 .bannerSec .bannerDescription{font-size: 24px;font-weight: 400;line-height: 1.25;color: #939eaa;text-align: center;margin-top: 14px;margin-block: 40px}
 .bannerSec .bannerImg img{width: auto;max-height: 500px;max-width: 100%;}
 .bannerSec .bannerinfomain{padding: 10px 0 10px;font-size: 34px;line-height: 1.12;color: #404244;font-weight: 600;}
@@ -57,7 +59,7 @@ img{width: 100%}
 /*our feature sec css start*/
 .smallTitle{color: #939eaa;font-size: 24px;line-height: 1.33;font-weight: 500;margin-top: 8px;}
 .ourFeature .featureBox{display: flex;justify-content: space-between;flex-wrap: wrap;}
-.ourFeature .featureBox .greyBox{border-radius: 10px;background: rgb(147 158 170 / 10%);padding: 50px 15px;margin-top: 24px;text-align: center;width: 32%;}
+.ourFeature .featureBox .greyBox{border-radius: 10px;background: rgb(255 40 1 / 7%);padding: 50px 15px;margin-top: 24px;text-align: center;width: 32%;}
 .ourFeature .greyBox .title{padding: 25px 0 8px;font-size: 18px;line-height: 1.22;font-weight: 600}
 .ourFeature .greyBox .content{color: #404244;font-size: 18px;line-height: 1.22;font-weight: 500}
 .ourFeature .greyBox img{height: 51px}
@@ -65,7 +67,7 @@ img{width: 100%}
 
 /*signuptoday sec css start*/
 .signupToday{position: relative;}
-.signupToday:before{position: absolute;content: '';width: 100%;height: 100%;top: -90px;left: 0;background: url('/images/howItWorksBg.webp') no-repeat;background-size: 100%;z-index: -1;}
+.signupToday:before{position: absolute;content: '';width: 100%;height: 100%;top: 0px;left: 0;background: url('/images/howItWorksBg.webp') no-repeat;background-size: 100%;z-index: -1;}
 .signupToday .signupTitle{font-size: 34px;font-weight: 600;color: #404244;margin-bottom: 17px;}
 .signupToday .signupInfo{color: #939eaa;font-size: 20px;font-weight: 400;line-height: 1.33;text-align: left; margin-bottom: 27px;}
 .signupToday .additionalInfo{color: #939eaa;font-size: 20px;font-weight: 400;line-height: 1.33;text-align: left;margin-top: 30px;}
@@ -74,16 +76,15 @@ img{width: 100%}
 /*signuptoday sec css end*/
 
 /*foundation sec css start*/
-.foundationSec{padding-top: 0;}
-.foundationSec .foundationFlex{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;margin-top: 40px}
-.foundationSec .foundationFlex .haldFoundationpart{width: 47%;font-size: 20px;}
-.foundationSec .comTitle{line-height: 1.1;}
-.foundationSec .fInfo{display: flex;align-items: flex-start;padding: 10px 0;position: relative;width: 100%;z-index: 1;}
-.foundationSec .fInfo .name{font-size: 18px;font-weight: 600;line-height: 1.22;color: #404244;padding: 0 40px;background-color: #fff;}
-.foundationSec .fInfo:before{position: absolute;content: '';width: 100%;height: 1px;background-color: #04375c;top: 0;bottom: 0;margin: auto;z-index: -1;}
-.foundationSec .fInfo:not(:last-child):after{position: absolute;content: '';width: 1px;height: 100%;background-color: #04375c;right: 0;z-index: -1;top: 20px;}
-.foundationSec .rightInfo{position: relative;}
-.foundationSec .rightInfo:after{position: absolute;content: '';width: 50px;height: 1px;background-color: #04375c;top: 0;bottom: 0;margin: auto;left: 100%;}
+.foundationFlex {display: flex;flex-wrap: wrap;justify-content: space-between;gap: 32px;padding: 32px;margin: auto;position: relative;}
+/* Left side */
+.haldFoundationpart{display: flex;justify-content: space-between;flex-direction: row;flex-wrap: wrap;gap: 20px;}
+/* Right side */
+.joinRollon a{color: #fff;text-decoration: none;}
+.joinRollon {flex: 1;display: flex;flex-direction: column;background: linear-gradient(135deg, #04375c, #ff2801);color: #fff;border-radius: 12px;padding: 2rem;text-align: center;font-size: 1.2rem;font-weight: 500;box-shadow: 0 4px 12px rgba(0,0,0,0.1);position: relative;}
+.foundationFlex .fInfo {width: 48%;display: flex;align-items: center;gap: 1rem;background: #fff;border-radius: 10px;padding: 1rem;box-shadow: 0 4px 12px rgba(0,0,0,0.08);transition: transform 0.2s ease, box-shadow 0.2s ease;}
+.foundationFlex .fInfo img {width: 80px;height: 80px;flex-shrink: 0;}
+.foundationFlex .name {font-size: 1.1rem;font-weight: 600;color: #2c3e50;}
 /*foundation sec css end*/
 
 /*securitySec css start*/
@@ -105,12 +106,13 @@ img{width: 100%}
 .footer .footerlogo{width: 144px;}
 .footer .fInfo{margin-top: 20px;font-size: 14px;font-weight: 500;line-height: 1.29;color: #939eaa}
 .footer .fTitle{font-size: 18px;font-weight: bold;line-height: 1.22;color: #404244;margin-top: 17px;}
+.footer .footerUl{padding: 0;}
 .footer .footerUl li a{font-size: 18px;font-weight: 500;line-height: 1.22;color: #939eaa;margin-top: 16px;display: block;}
 .footer .footerBigtitle{font-size: 36px;font-weight: bold;line-height: 1.11;color: #404244;margin-bottom: 30px;}
 /*footer css end*/
 
 .faqSec{padding-bottom: 30px;margin-bottom: 60px;border-radius: 10px;}
-.faqBox{padding: 10px;background-color: #04375c38;margin-bottom: 10px;border: 1px solid #04375c54;border-radius: 5px;}
+.faqBox{padding: 15px 20px;background-color: #04375c38;margin-bottom: 10px;border: 1px solid #04375c54;border-radius: 5px;}
 .titleFaq{font-size: 20px;cursor: pointer;font-weight: 600;color: #04375c;display: flex;justify-content: space-between;align-items: center;}
 .contentFaq{font-size: 16px;padding: 10px 0;color: #04375c;}
 .iconFaq{width: 20px;}
@@ -121,7 +123,8 @@ img{width: 100%}
 @media only screen and (min-width: 1200px){
 	header ul li a:hover{color: #04375c;}
 	.comButton:hover{background: #fff;color: #04375c}
-	.ourFeature .greyBox:hover{background: rgb(29 137 226 / 9%)}
+	.ourFeature .greyBox:hover{background: rgb(255 40 1 / 30%)}
+	.fInfo:hover {transform: translateY(-4px);box-shadow: 0 6px 16px rgba(0,0,0,0.12);}
 }
 
 /*media query*/
@@ -132,7 +135,7 @@ img{width: 100%}
 
 
 @media only screen and (max-width: 1199px){
-	.comPadding{padding: 60px 0;}
+	.comPadding{padding: 40px 0;}
 	.comTitle{font-size: 50px;}
 	.bannerSec .bannerTitle{font-size: 50px;}
 	.bannerSec .bannerinfomain{font-size: 28px;}
@@ -163,7 +166,6 @@ img{width: 100%}
 	.foundationSec .foundationFlex .haldFoundationpart{width: 100%}
 	.foundationSec .foundationFlex .haldFoundationpart.imgDiv{text-align: center;margin-bottom: 20px}
 	.foundationSec .foundationFlex .haldFoundationpart.imgDiv img{max-width: 400px}
-	.foundationSec .fInfo:not(:last-child){margin-bottom: 30px;}
 	.foundationSec .foundationFlex{margin-top: 10px}
 	.foundationSec .fInfo br{display: none;}
 	.securitySec .sTitle{font-size: 24px;}
@@ -174,10 +176,14 @@ img{width: 100%}
 	.createAccount .gBox .detail{font-size: 18px;}
 	.footer .footerBigtitle{margin-top: 40px;font-size: 20px;}
 	.footer .footerBigtitle br{display: none;}
-	.centermenu{display: none;position: absolute;background: #fff;width: calc(100% + 15px);left: -7px;top: 100px;box-shadow: 0 10px 10px 0 rgb(29 137 226 / 10%);}
+	.header .centermenu{display: none;position: absolute;background: #fff;width: calc(100% + 20px);left: -10px;top: 100px;box-shadow: 0 10px 10px 0 rgb(29 137 226 / 10%);} 
+	.header .centermenu.open{display:flex;flex-direction:column;gap:1rem;align-items:center;padding:10px 0;border-radius:6px;}
+	.header.scrolled .centermenu{top: 60px;}
+	.nav{width: 100%; flex-direction: column;}
+	.header .navbar li{width: 100%;}
 	.header .navbar{padding: 10px 0;}
 	.header .navbar-nav li a{font-size: 16px;padding: 10px;display: block;text-align: center;}
-	.header .hamburger{display: block;position: absolute;right: 10px;top: 47px;}
+	.header .hamburger{display: block;position: absolute;right: 10px;top: 35px;padding: 0;border: 0;font-size: 0;background-color: transparent;}
 	.header .hamburger.open span{transform: rotate(47deg);top: -5px;}
 	.header .hamburger.open span:before{transform: rotate(-93deg);top: 0}
 	.header .hamburger.open span:after{display: none;}
@@ -201,6 +207,10 @@ img{width: 100%}
 	.foundationSec .fInfo .detail{font-size: 16px;}
 	.foundationSec .fInfo img{width: 44px;margin-right: 22px;}
 	.footer .footerBigtitle{font-size: 18px;}
+	.howitworks .howsteps li{font-size: 12px;padding-right: 10px;margin: 0;}
+	.foundationFlex .fInfo{width: 100%;margin-bottom: 10px;}
+	form{padding: 20px;font-size: 16px;}
+	form label{font-size: 16px !important;}
 }
 
 @media only screen and (min-width: 991){

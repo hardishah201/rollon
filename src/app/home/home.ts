@@ -4,8 +4,9 @@ import { ContactForm } from '../contact-form/contact-form';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css'],
   imports: [CommonModule, ContactForm],
 })
 export class Home {

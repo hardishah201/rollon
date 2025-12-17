@@ -6,7 +6,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
-  standalone: true, 
+  standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
@@ -16,15 +16,30 @@ export class Login implements OnInit {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/admin-dashboard']); // ✅ Redirect if already logged in
+      this.router.navigate(['/admin-dashboard']); // Redirect if already logged in
     }
   }
 
   onSubmit(form: NgForm) {
-    if (form.valid) { console.log('username:', this.username, 'password:', this.password); const success = this.authService.login(this.username, this.password); console.log('Login success:', success); if (success) { this.router.navigate(['/admin-dashboard']); } else { this.errorMessage = 'Invalid credentials'; } }
+    this.errorMessage = '';
+    // mark fields as touched to show validation messages
+    form.control.markAllAsTouched();
+    if (!form.valid) {
+      this.errorMessage = 'Please fix the errors above.';
+      return;
+    }
+
+    // use AuthService to validate and persist authenticated state
+    const ok = this.authService.login(this.username, this.password);
+    if (ok) {
+      this.router.navigate(['/admin-dashboard']);
+    } else {
+      this.errorMessage = 'Invalid username or password.';
+      this.password = '';
+    }
   }
 }
