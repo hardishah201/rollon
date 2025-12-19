@@ -7,7 +7,6 @@ import { AdminDashboard } from './admin-dashboard/admin-dashboard';
 import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-  // { path: '', component: ComingSoon },
   { path: '', component: Home },
   { path: 'login', component: Login },
   { path: 'admin-dashboard', component: AdminDashboard, canActivate: [AuthGuard] },

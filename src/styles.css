@@ -14,7 +14,7 @@ img{width: 100%}
 .trans{transition: 0.3s ease-in-out all;-webkit-transition: 0.3s ease-in-out all;ms-transition: 0.3s ease-in-out all;o-transition: 0.3s ease-in-out all;}
 
 /*header css start*/
-.header{border-bottom: solid 1px rgb(151 151 151 / 50%);position: sticky;top: 0;z-index: 99;background: #fff;}
+.header{border-bottom: solid 1px rgb(151 151 151 / 50%);position: sticky;top: 0;z-index: 99;background: #fff;transition: 0.3s ease-in-out all;}
 .header .navbar{padding: 16px 0;}
 .header .navbar-brand{padding: 0}
 .header .navbar-brand img{max-width: 180px;transition: max-width .2s ease, height .2s ease}
@@ -183,7 +183,8 @@ img{width: 100%}
 	.header .navbar li{width: 100%;}
 	.header .navbar{padding: 10px 0;}
 	.header .navbar-nav li a{font-size: 16px;padding: 10px;display: block;text-align: center;}
-	.header .hamburger{display: block;position: absolute;right: 10px;top: 35px;padding: 0;border: 0;font-size: 0;background-color: transparent;}
+	.header .hamburger{display: block;position: absolute;right: 10px;top: 55px;padding: 0;border: 0;font-size: 0;background-color: transparent;transition: 0.3s ease-in-out all;}
+	.header.scrolled .hamburger{top: 40px}
 	.header .hamburger.open span{transform: rotate(47deg);top: -5px;}
 	.header .hamburger.open span:before{transform: rotate(-93deg);top: 0}
 	.header .hamburger.open span:after{display: none;}
