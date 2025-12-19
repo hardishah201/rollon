@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/xouiz7pf6ngr/public_html
-    - /bin/cp -r /home/xouiz7pf6ngr/rollon/* $DEPLOYPATH
+    - /bin/cp -r * $DEPLOYPATH
