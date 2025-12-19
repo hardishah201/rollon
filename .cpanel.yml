@@ -1,5 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/xouiz7pf6ngr/public_html
-    - /bin/cp -r * $DEPLOYPATH
+    - cd /home/xouiz7pf6ngr/public_html
+    - npm install
+    - npm run build --configuration production
+    - cp -r dist/your-app-name/* /home/xouiz7pf6ngr/public_html
