@@ -1,0 +1,58 @@
+<!-- header start -->
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a class="navbar-brand" href="/">
+                <img src="images/logo.svg" alt="Roll on">
+            </a>
+            <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle navigation">
+                <span></span>
+            </button>
+            <div class="centermenu" [class.open]="menuOpen">
+                <ul class="nav" *ngIf="!isLogged()">
+                    <li class="nav-item"><a class="nav-link" href="#storyProcess" (click)="scrollTo('storyProcess',$event); menuOpen=false">Our Story & Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" (click)="scrollTo('services',$event); menuOpen=false">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mission" (click)="scrollTo('mission',$event); menuOpen=false">Our Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contactus" (click)="scrollTo('contactus',$event); menuOpen=false">Contact Us</a></li>
+                </ul>
+                <ul class="nav rightside" *ngIf="isLogged()">
+                    <li class="nav-item"><a class="nav-link comButton" href="#" (click)="logout($event); menuOpen=false">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- header end -->
+<router-outlet></router-outlet>
+<!-- footer start -->
+<div class="container">
+    <footer class="footer">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-sm-12">
+                <a href="/"><img src="images/logo.svg" alt="Roll on" class="footerlogo" /></a>
+                <p class="fInfo">
+                    Copyright © 2025 RollOn Mobility Pvt Ltd. <br />All rights reserved.
+                </p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+                <div class="fTitle">Address</div>
+                <ul class="footerUl">
+                    <li><a href="#">20, Bhagvati Nagar, IOC Road, Chandkheda, Ahmedabad – 382424</a></li>
+                </ul>
+                <div class="fTitle">Contact</div>
+                <ul class="footerUl">
+                    <li><a href="mailto:partner@rollonmobility.com">partner@rollonmobility.com</a></li>
+                    <li><a href="tel:+917990032047">+91 7990032047</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-12">
+                <div class="fTitle">Legal</div>
+                <ul class="footerUl">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- footer end -->
